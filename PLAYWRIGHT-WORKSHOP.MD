@@ -269,7 +269,7 @@ jobs:
     name: 'e2e Tests'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.33.0-focal
+      image: mcr.microsoft.com/playwright:v1.31.0-focal
     strategy:
       fail-fast: false
     steps:
