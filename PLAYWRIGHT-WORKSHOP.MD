@@ -38,10 +38,10 @@ Playwright already comes with a server capable of hosting our reports:
 
 > Learn more about this step on the official [Playwright documentation](https://playwright.dev/docs/intro)
 
-### Step 2: Creating and running your first test playwright.
+### Step 2: Creating and running your first playwright test.
 
 Playwright comes out of the box with a powerful API for writing tests. This api includes many features, like
-auto waiting, snapshot testing, soft assertions... In this workshop we will not dive deep into all the capabilities that
+auto waiting, snapshot testing, soft assertions, etc... In this workshop we will not dive deep into all the capabilities that
 playwright offers, and will instead use the [Playwright codegen](https://playwright.dev/docs/codegen).
 
 In this step we will test the following scenario:
@@ -58,14 +58,12 @@ Start the codegen by typing:
 ```shell
     npx playwright codegen --ignore-https-errors https://naportal-ci-pgsql.c.ptin.corppt.com/portal/na/login
 ```
-
->We need to use the flag **--ignore-https-errors** since out CI portal uses a self-signed certificate
+>We need to use the flag **--ignore-https-errors** since out CI portal uses a self-signed certificate.
 
 Now I just have to record all the steps. In case of a step to validate a non-interactive state,
-just click it where the final user would look to reach a conclusion, we can change the interaction into one assertion later.
+just click it where the final user would look to reach a conclusion, we can change the interaction into an assertion later.
 
 After following the steps you should have with something like this:
-
 ```ts
 import { test, expect } from '@playwright/test';
 
@@ -124,18 +122,17 @@ test('[MONITORING-WEB] Date ranges are also taken in consideration when searchin
 ```
 
 Now all that is left is for us to run our test and check if everything is working as expected.
-
 ```shell
     npx playwright test --project firefox --headed
 ```
 
-> the flag **--project** let us choose the browser that will run this test, the flag **--headed** let us watch the tests as they run-
+> the flag **--project** let us choose the browser that will run this test, the flag **--headed** let us watch the tests as they run.
 
 ### Step 3: Debug and Trace tests
 
 #### Debugger
 Playwright comes out of the box with tools to help us debug tests. A debugger and a trace viewer. The debug tool enable 
-us to see how our test is in real time and traces let us see all that have happened to a previously executed test.
+us to debug our test is in real time and the trace viewer let us see all that have happened to a previously executed test.
 
 To run a test in debug mode, all you have to do is to add the **--debug** flag.
 
@@ -146,8 +143,7 @@ To run a test in debug mode, all you have to do is to add the **--debug** flag.
 #### Tracer
 First we need to record a trace, by default playwright will not record any trace, we can configure it to run traces on 
 all tests or to rerun failed tests with the tracer recorder on. We can manually activate the trace recorder by using the
-**--trace on** flag.
-
+**--trace on** flag:
 ```shell
   npx playwright test --trace on --project firefox
 ```
@@ -201,7 +197,7 @@ export default defineConfig({
 });
 ```
 
-Let's also create a failing test by copying the test we already have and inverting one of the assertions:
+Let's also create a failing test by copying the test we already have and changing one of the locators:
 
 failing.spec.ts
 ```ts
