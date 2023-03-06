@@ -132,7 +132,7 @@ Now all that is left is for us to run our test and check if everything is workin
 > the flag **--project** let us choose the browser that will run this test, the flag **--headed** let us watch the tests as they run-
 
 ### Step 3: Debug and Trace tests
-A458397C910798E0
+
 #### Debugger
 Playwright comes out of the box with tools to help us debug tests. A debugger and a trace viewer. The debug tool enable 
 us to see how our test is in real time and traces let us see all that have happened to a previously executed test.
@@ -341,3 +341,4 @@ jobs:
     #...    
 ```
 
+The end!
