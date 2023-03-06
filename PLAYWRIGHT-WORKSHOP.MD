@@ -320,13 +320,6 @@ jobs:
   #...
   e2e-tests:
     #...
-    strategy:
-      fail-fast: false
-      matrix:
-        project: [chromium, firefox]
-        shardIndex: [1, 2]
-        shardTotal: [2]
-    #...
     steps:
       - name: Run tests
         run: npx playwright test -j 1 --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
