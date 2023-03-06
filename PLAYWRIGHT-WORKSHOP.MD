@@ -215,7 +215,7 @@ Now lets run our tests with the command:
 ```
 
 #### Command options
-Another powerful way of customizing how we run our tests is by though passing instructions when running it, lets try
+Another powerful way of customizing how we run our tests is by passing command options when running it, lets try
 to run our test with different levels of parallelism and sharding for example:
 
 To run our tests with a defined number of threads, we can use the flag **--workers X** where X is the number of workers 
@@ -228,17 +228,15 @@ Run this command to execute the tests with a single worker:
 
 >This flag have the shorthanded format **-j X**
 
-Now lets try to run our tests in different shards, to do it we use the flag **--shard=X/Y** where Y is the current shard
-and Y is the total number of shards. Playwright will automatically resolve based onn this input what tests should run on 
-each shard:
+Now lets try to run our tests in different shards, to do it we use the flag **--shard=X/Y** where X is the current shard
+and Y is the total number of shards. Playwright will automatically resolve what tests should run based on this input:
 
 ```shell
   npx playwright test -j 2 --shard=1/2; 
 ```
 
 #### Environment variables
-Another option is the use of environment variables, which is especially useful when working with containers.
-
+Another option is the use of environment variables.
 Let's use an environment variable to change the html report directory:
 
 ```shell
