@@ -28,7 +28,7 @@ If you want to run your tests directly from you machine, remember to install pla
 
 You can run your tests in a container without having to install browsers and os dependencies.
 ```shell
-    docker run -v "$(pwd)":/playwright --workdir /playwright mcr.microsoft.com/playwright:v1.31.0-focal npx playwright test
+    docker run -v "$(pwd)":/playwright --workdir /playwright mcr.microsoft.com/playwright:v1.32.2-focal npx playwright test
 ```
 
 Playwright already comes with a server capable of hosting our reports:
